@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
 	*/
 	title: "Astro Cactus",
 	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://astro-cactus.chriswilliams.dev/",
+	url: "https://markovichlab.org",
 };
 
 // Used to generate links in both the Header & Footer.
@@ -37,17 +37,17 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Home",
 	},
 	{
-		path: "/about/",
-		title: "About",
+		path: "/Team/",
+		title: "Team",
 	},
 	{
 		path: "/posts/",
 		title: "Blog",
 	},
-	{
-		path: "/notes/",
-		title: "Notes",
-	},
+	// {
+	// 	path: "/notes/",
+	// 	title: "Notes",
+	// },
 ];
 
 // https://expressive-code.com/reference/configuration/
