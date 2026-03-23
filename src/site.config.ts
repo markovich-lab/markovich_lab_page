@@ -3,7 +3,7 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chris Williams",
+	author: "Katie Markovich",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
@@ -37,17 +37,29 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Home",
 	},
 	{
-		path: "/Team/",
+		path: "/team/",
 		title: "Team",
 	},
 	{
 		path: "/posts/",
 		title: "Blog",
 	},
-	// {
-	// 	path: "/notes/",
-	// 	title: "Notes",
-	// },
+	{
+		path: "/research/",
+		title: "Research",
+	},
+	{
+		path: "/opportunities/",
+		title: "Opportunities",
+	},
+	{
+		path: "/teaching_etc/",
+		title: "Teaching",
+	},
+		{
+		path: "/labstuff/",
+		title: "Resources", //put expectations, policies, and other resources here
+	},
 ];
 
 // https://expressive-code.com/reference/configuration/
