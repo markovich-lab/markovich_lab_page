@@ -53,7 +53,7 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Opportunities",
 	},
 	{
-		path: "/teaching_etc/",
+		path: "/teachingetc/",
 		title: "Teaching",
 	},
 		{

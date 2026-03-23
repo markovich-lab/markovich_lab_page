@@ -1,0 +1,69 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+    title: "Teaching & Workshops",
+    description: "Courses and workshops offered by the lab",
+};
+
+const offerings = [
+    {
+        type: "Course",
+        title: "Advanced Environmental Science",
+        term: "Spring 2026",
+        instructors: ["Katie Markovich"],
+        image: "/images/courses/el_tatio.jpg",
+        desc: "Intro to groundwater hydrology, modeling, and field methods. Lectures + labs.",
+        link: "https://canvas.unm.edu/courses/65924",
+    },
+    {
+        type: "Course",
+        title: "Physical Hydrology",
+        term: "Fall 2025",
+        instructors: ["Katie Markovich"],
+        image: "/images/courses/chile.jpg",
+        desc: "Physical processes that govern the spatial and temporal characteristics of water in its various storage reservoirs (terrestrial, atmospheric, oceanic) and the corresponding fluxes of water between these reservoirs ",
+        link: "https://github.com/kmarkovich/PhysHydro_Fall25",
+    },
+    {
+        type: "Workshop",
+        title: "An Introduction to Predictive Modeling Workflows with python, pyEMU, and PEST++",
+        date: "June 7, 2026",
+        instructors: ["Jeremy White","Mike Fienen","Katie Markovich"],
+        image: "/images/courses/ies_minima.jpg",
+        desc: "This course provides an introduction to predictive modeling workflows using PEST++ within the framework of the python programming language.",
+        link: "https://igwmc.princeton.edu/groundwater-modeling-and-more/short-courses-more/#An-Introduction-to-Predictive-Modeling-Workflows",
+    },
+];
+---
+<PageLayout meta={meta}>
+    <p class="text-muted mb-8">Courses, short courses, and workshops offered by the lab. Click each card for details and sign-up information.</p>
+
+    <div class="max-w-6xl mx-auto px-4">
+        <ul class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3" role="list">
+            {offerings.map((o) => (
+                <li class="bg-card rounded-lg shadow-sm overflow-hidden flex flex-col">
+                    {o.image ? <img src={o.image} alt={o.title} class="w-full h-40 object-cover" /> : null}
+
+                    <div class="p-5 flex-1 flex flex-col">
+                        <div class="flex items-start justify-between gap-3">
+                            <div>
+                                <p class="text-xs font-medium text-accent">{o.type}{o.term ? ` · ${o.term || o.date}` : ""}</p>
+                                <h3 class="mt-1 text-lg font-semibold">{o.title}</h3>
+                            </div>
+                        </div>
+
+                        <p class="mt-3 text-sm text-muted flex-1">{o.desc}</p>
+
+                        <div class="mt-4 flex items-center justify-between">
+                            <p class="text-xs text-muted">Instructors: {o.instructors.join(", ")}</p>
+                            <a href={o.link} class="ml-4 inline-flex items-center gap-2 text-sm font-semibold text-white bg-accent px-3 py-1.5 rounded hover:opacity-95">
+                                Details
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            ))}
+        </ul>
+    </div>
+</PageLayout>
