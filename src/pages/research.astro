@@ -5,9 +5,64 @@ const meta = {
 	description: "Research themes and projects of the Markovich Groundwater Sustainability Lab",
 	title: "Research",
 };
+
+const projects = [
+	{
+		title: "InSAR Data Worth in Groundwater Resource Modeling",
+		blurb:
+			"In collaboration with Professor Eric Lindsey (UNM EPS), we are exploring the relative worth of InSAR-derived land surface deformation data for groundwater resource modeling. Most of the application of InSAR data in groundwater contexts has been for subsidence monitoring, leaving behind the potentially rich information on storage properties and recharge volumes (otherwise very difficult to estimate for groundwater systems). The challenge is that InSAR data exhibits complex noise that may overwhelm the model inversion process. We are exploring this using simple-complex modeling and ensemble inversion with varying levels of noise complexity. ",
+		images: [
+			{ src: "/images/sentinel.jpg", alt: "Sentinel satellite" },
+			// { src: "/images/estancia.jpg", alt: "Estancia Valley" },
+		],
+	},
+	{
+		title: "Integrated Hydrology and Nature-based Solutions in the Middle Rio Grande Bosque",
+		blurb:
+			"The shallow aquifer of the Middle Rio Grande Bosque is dynamically connected to the Rio Grande, the interactions of which have been massively altered by digging of drains, construction of Cochiti Dam, and now by drought, climate change, and ecosystem restoration activities. Understanding the current and future behavior of this shallow aquifer is critical for the state as surface water depletions in this region affect our ability to meet interstate compact obligations. We are combining field and modeling approaches to refine our understanding of SW-GW interactions and of the riparian water budget as a whole.",
+		images: [{ src: "/images/bosque.jpg", alt: "Middle Rio Grande bosque" }],
+	},
+	{
+		title: "Domestic Well Vulnerability to Wildfire and Post-Fire Hydrologic Changes",
+		blurb:
+			"The 2022 Hermits Peak Calf Canyon fire is the largest in New Mexico history, burning 340,000 acres and impacting rural communities in Mora County. Research on wildfire impacts to hyrdology have mainly focused on the more immediate effects to runoff and surface water quality. Recent detections of metals in domestic wells reveal a less studied and less understood risk of wildfire to water resources. This work is merging age tracers with reactive transport modeling to disentangle the (bio)geochemical and hydrogeologic processes producing these water qulity impacts.",
+		images: [{ src: "/images/hpcc_fire.jpg", alt: "Hermits Peak/Calf Canyon burn scar" }],
+	},
+];
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-4">Research</h1>
-	<p class="text-muted mt-8 text-sm italic">This page is a work in progress — check back soon.</p>
+	<h1 class="title mb-4">Our research is centered on the broad theme of science supporting sustainable groundwater management.</h1>
+
+	<p class="text-muted mb-8">
+		Groundwater systems are chronically under-observed, so we often manage them under deep
+		uncertainty about aquifer properties, their connection to surface water and ecosystems, and how
+		they're responding to drought, climate change, and human use. Our work lives in the two-way
+		conversation between observation and modeling: new and underused data sources help constrain
+		our models, while those models in turn tell us which observations would actually move the
+		needle. To this end, we combine numerical modeling
+		with field observation and geophysical and remote sensing techniques that probe basic hydrologic
+		science questions and produce decision-relevant, actionable science.
+	</p>
+
+	<div class="mx-auto max-w-4xl px-4">
+		<ul class="flex flex-col gap-6" role="list">
+			{
+				projects.map((p) => (
+					<li class="bg-card flex flex-col items-start gap-6 rounded-lg p-6 shadow-sm sm:flex-row">
+						<div class="flex flex-shrink-0 gap-2">
+							{p.images.map((img) => (
+								<img src={img.src} alt={img.alt} class="h-36 w-36 rounded-md object-cover" />
+							))}
+						</div>
+
+						<div class="min-w-0 flex-1">
+							<h3 class="text-xl leading-tight font-semibold">{p.title}</h3>
+							<p class="text-muted mt-3 text-sm">{p.blurb}</p>
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </PageLayout>
